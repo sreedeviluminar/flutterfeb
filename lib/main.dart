@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/screens/registration.dart';
 import 'package:flutterfeb/screens/splash_page_with_background_image.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash_with_Image(),
+      home: RegistrationPage(),
     );
   }
 }
