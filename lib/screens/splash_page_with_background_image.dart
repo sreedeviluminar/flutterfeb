@@ -1,10 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/screens/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 //to set background image or color or gradient for a screen
 
 class Splash_with_Image extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
+    });
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(

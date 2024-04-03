@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfeb/screens/splashPage.dart';
 import 'package:flutterfeb/screens/splash_page_with_background_image.dart';
 
 void main() {
@@ -10,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Splash_with_Image(),
     );
   }
