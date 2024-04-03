@@ -7,6 +7,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
