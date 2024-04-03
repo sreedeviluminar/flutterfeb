@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: [
-                SizedBox(height: 50), // Adding space at the top
+                const SizedBox(height: 50), // Adding space at the top
                 Text(
                   "Login Page",
                   style: GoogleFonts.sahitya(
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
                     color: Colors.green,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -33,10 +33,10 @@ class LoginPage extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.person_outline_outlined),
                     border: OutlineInputBorder(),
@@ -44,11 +44,11 @@ class LoginPage extends StatelessWidget {
                     hintText: 'Enter your email here',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.password_outlined),
                     border: OutlineInputBorder(),
                     labelText: "Password",
@@ -57,19 +57,19 @@ class LoginPage extends StatelessWidget {
                     'Password must contain upper and lowercase letters',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 MaterialButton(
                   onPressed: () {},
                   color: Colors.green,
                   minWidth: 200,
-                  shape: StadiumBorder(),
-                  child: Text("Login"),
+                  shape: const StadiumBorder(),
+                  child: const Text("Login"),
                 ),
-                SizedBox(height: 20), // Adjusted spacer
+                const SizedBox(height: 20), // Adjusted spacer
                 RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: "Not a User?",
                     style: TextStyle(
                       color: Colors.black,
