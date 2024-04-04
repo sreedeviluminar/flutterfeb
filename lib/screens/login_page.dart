@@ -86,7 +86,8 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.2), // Adding space at the bottom (20% of screen height)
+                // Adding space at the bottom (20% of screen height)
+                SizedBox(height: MediaQuery.of(context).size.height * 0.2),
                 Image.network(
                   "https://www.pngmart.com/files/10/Pine-Branch-Background-PNG.png",
                   fit: BoxFit.cover,

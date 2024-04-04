@@ -8,7 +8,7 @@ class RegistrationPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           //to avoid scrollable action
-          physics: const NeverScrollableScrollPhysics(),
+         physics: const NeverScrollableScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
