@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutterfeb/screens/login_page.dart';
+import 'package:flutterfeb/utils/textThemes.dart';
+import '../utils/mycolors.dart';
 
 class RegistrationPage extends StatelessWidget {
   @override
@@ -8,7 +10,7 @@ class RegistrationPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           //to avoid scrollable action
-         physics: const NeverScrollableScrollPhysics(),
+          //physics: const NeverScrollableScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
@@ -16,22 +18,14 @@ class RegistrationPage extends StatelessWidget {
                 const SizedBox(height: 50), // Adding space at the top
                 Text(
                   "SignUp Page",
-                  style: GoogleFonts.sahitya(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Colors.green,
-                  ),
+                  style: MyTextThemes.textHeading
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 Text(
                   "Create Your Account",
-                  style: GoogleFonts.sahitya(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Colors.black,
-                  ),
+                  style: MyTextThemes.bodyTextStyle
                 ),
                 const SizedBox(
                   height: 15,
@@ -47,8 +41,15 @@ class RegistrationPage extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
+                 TextFormField(
+                   validator:(email){
+                     if(email!.isEmpty || !email.contains('@')){
+                       return "email must be a valid email";
+                     }else{
+                       return null;
+                     }
+                   } ,
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.person_outline_outlined),
                     border: OutlineInputBorder(),
                     labelText: "Email",
@@ -59,6 +60,13 @@ class RegistrationPage extends StatelessWidget {
                   height: 15,
                 ),
                 TextFormField(
+                  validator: (password){
+                    if(password!.isEmpty || password.length < 6) {
+                      return 'Password is empty or / check the length';
+                    }else{
+                      return  null;
+                    }
+                  },
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.password_outlined),
                     border: OutlineInputBorder(),
@@ -72,6 +80,13 @@ class RegistrationPage extends StatelessWidget {
                   height: 15,
                 ),
                 TextFormField(
+                  validator: (confirmpassword){
+                    if(confirmpassword!.isEmpty){
+                      return "password mismatch";
+                    }else{
+                      return null;
+                    }
+                  },
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.password_outlined),
                     border: OutlineInputBorder(),
@@ -85,12 +100,20 @@ class RegistrationPage extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {},
-                  color: Colors.green,
+                  color: MyColors.basicColor,
                   minWidth: 200,
                   shape: const StadiumBorder(),
                   child: const Text("Register"),
                 ),
                 const SizedBox(height: 20), // Adjusted spacer
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    child: Text(
+                      "Already Registered?? SignIn Here!!",
+                      style: MyTextThemes.bodyTextStyle))
               ],
             ),
           ),

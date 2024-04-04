@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/screens/registration.dart';
+import 'package:flutterfeb/utils/mycolors.dart';
+import 'package:flutterfeb/utils/textThemes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -16,22 +20,14 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 50), // Adding space at the top
                 Text(
                   "Login Page",
-                  style: GoogleFonts.sahitya(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Colors.green,
-                  ),
+                  style:MyTextThemes.textHeading
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 Text(
                   "Login To Your Account",
-                  style: GoogleFonts.sahitya(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Colors.black,
-                  ),
+                  style: MyTextThemes.bodyTextStyle
                 ),
                 const SizedBox(
                   height: 15,
@@ -62,22 +58,27 @@ class LoginPage extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {},
-                  color: Colors.green,
+                  color: MyColors.basicColor,
                   minWidth: 200,
                   shape: const StadiumBorder(),
                   child: const Text("Login"),
                 ),
                 const SizedBox(height: 20), // Adjusted spacer
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     text: "Not a User?",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                     ),
                     children: [
                       TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => RegistrationPage()));
+                          },
                         text: " SignUp",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black,
@@ -86,8 +87,8 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Adding space at the bottom (20% of screen height)
                 SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+                // Adding space at the bottom (20% of screen height)
                 Image.network(
                   "https://www.pngmart.com/files/10/Pine-Branch-Background-PNG.png",
                   fit: BoxFit.cover,
