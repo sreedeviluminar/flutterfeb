@@ -109,9 +109,11 @@ class RegistrationPage extends StatelessWidget {
                     onPressed: () {
                       var valid = formkey.currentState!.validate();
                       if(valid == true){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=>LoginPage()));
                       }else{
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Registration failed")));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Registration failed")));
                       }
                     },
                     color: MyColors.basicColor,
