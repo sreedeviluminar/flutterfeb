@@ -67,6 +67,8 @@ class RegistrationPage extends StatelessWidget {
                   ),
                   TextFormField(
                     controller: passController,
+                    obscureText:true ,
+                    obscuringCharacter: '*',
                     validator: (password){
                       if(password!.isEmpty || password.length < 6) {
                         return 'Password is empty or / check the length';
@@ -74,8 +76,6 @@ class RegistrationPage extends StatelessWidget {
                         return  null;
                       }
                     },
-                    obscureText:true ,
-                    obscuringCharacter: '*',
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.password_outlined),
                       suffixIcon: Icon(Icons.visibility_off),
