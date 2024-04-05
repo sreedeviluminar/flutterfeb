@@ -74,8 +74,11 @@ class RegistrationPage extends StatelessWidget {
                         return  null;
                       }
                     },
+                    obscureText:true ,
+                    obscuringCharacter: '*',
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.password_outlined),
+                      suffixIcon: Icon(Icons.visibility_off),
                       border: OutlineInputBorder(),
                       labelText: "Password",
                       hintText: 'Enter your password here',
