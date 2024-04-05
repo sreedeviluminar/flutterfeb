@@ -1,11 +1,31 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfeb/screens/registration.dart';
+import 'package:flutterfeb/utils/cont_snackbar.dart';
 import 'package:flutterfeb/utils/mycolors.dart';
 import 'package:flutterfeb/utils/textThemes.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
+import 'home1.dart';
+
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String username = "admin";
+  String password = 'abc123';
+
+  var usercontroller = TextEditingController();
+  var pwdcontroller = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    usercontroller.dispose();
+    pwdcontroller.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,22 +38,18 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 50), // Adding space at the top
-                Text(
-                  "Login Page",
-                  style:MyTextThemes.textHeading
-                ),
+                Text("Login Page", style: MyTextThemes.textHeading),
                 const SizedBox(
                   height: 15,
                 ),
-                Text(
-                  "Login To Your Account",
-                  style: MyTextThemes.bodyTextStyle
-                ),
+                Text("Login To Your Account",
+                    style: MyTextThemes.bodyTextStyle),
                 const SizedBox(
                   height: 15,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
+                TextField(
+                  controller: usercontroller,
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.person_outline_outlined),
                     border: OutlineInputBorder(),
                     labelText: "Email",
@@ -44,20 +60,35 @@ class LoginPage extends StatelessWidget {
                   height: 15,
                 ),
                 TextFormField(
+                  controller: pwdcontroller,
+                  obscureText: true,
+                  obscuringCharacter: '*',
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.password_outlined),
                     border: OutlineInputBorder(),
                     labelText: "Password",
                     hintText: 'Enter your password here',
                     helperText:
-                    'Password must contain upper and lowercase letters',
+                        'Password must contain upper and lowercase letters',
                   ),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (username == usercontroller.text &&
+                        password == pwdcontroller.text) {
+                      successSnackbar(context);
+
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage1()));
+                    } else {
+                      errorSnackbar(context);
+                    }
+                    usercontroller.clear();
+                    pwdcontroller.clear();
+                  },
                   color: MyColors.basicColor,
                   minWidth: 200,
                   shape: const StadiumBorder(),
