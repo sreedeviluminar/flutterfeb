@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/screens/home1.dart';
 import 'package:flutterfeb/screens/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 //to set background image or color or gradient for a screen
@@ -10,7 +11,7 @@ class Splash_with_Image extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginPage()));
+          context, MaterialPageRoute(builder: (context) => HomePage1()));
     });
 
     return Scaffold(
