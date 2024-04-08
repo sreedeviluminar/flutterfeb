@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutterfeb/screens/home1.dart';
+import 'package:flutterfeb/screens/ListViewww/home1.dart';
+import 'package:flutterfeb/screens/ListViewww/listview%20using%20builder.dart';
 import 'package:flutterfeb/screens/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 //to set background image or color or gradient for a screen
@@ -9,9 +10,9 @@ import 'package:google_fonts/google_fonts.dart';
 class Splash_with_Image extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomePage1()));
+          context, MaterialPageRoute(builder: (context) => ListView_Builder()));
     });
 
     return Scaffold(
