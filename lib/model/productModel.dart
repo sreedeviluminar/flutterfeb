@@ -4,7 +4,10 @@ class Data {
   String? image;
   double? doubledata;
   double? time;
-  String? date;
+  String? stringdata;
+  String? extra;
 
-  Data({this.name, this.numdata, this.image, this.doubledata,this.date,this.time});
+  Data({this.name, this.numdata,
+    this.image, this.doubledata,
+    this.stringdata,this.time,this.extra});
 }
