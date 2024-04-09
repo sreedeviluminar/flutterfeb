@@ -68,6 +68,7 @@ class ListView_separated extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Container(
                 height: 200,
+                //foregroundDecoration: BoxDecoration(color: Colors.orange.withOpacity(.7)),
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
