@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,8 +16,11 @@ class ATMCard extends StatelessWidget {
               Container(
                 height: 300,
                 width: 600,
+                foregroundDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.black.withOpacity(.8)),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(60),
+                    borderRadius: BorderRadius.circular(40),
                     image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
