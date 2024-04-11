@@ -1,4 +1,0 @@
-keytool -exportcert -alias androiddebugkey -keystore "C:\Users\This PC\.android\debug.keystore" | "C:\\OpenSSL\\bin\\openssl" sha1 -binary |"C:\\OpenSSL\bin\\openssl" base64
-
-keytool -list -v -keystore C:\Users\This PC\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
-
