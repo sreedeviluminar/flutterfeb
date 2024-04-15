@@ -6,5 +6,5 @@ class MyColors {
   static Color textwhite = Colors.white;
 
   static Color iconColors = Colors.pink;
-  static Color? buttonColors = Colors.teal[400];
+  static Color? buttonColors = Colors.teal[900];
 }

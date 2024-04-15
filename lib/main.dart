@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/screens/Gridvieww/Gridview3.dart';
+import 'package:flutterfeb/screens/Gridvieww/Gridview4.dart';
+import 'package:flutterfeb/screens/Gridvieww/Gridview5.dart';
 import 'package:flutterfeb/screens/registration.dart';
 import 'package:flutterfeb/screens/splash_page_with_background_image.dart';
 
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash_with_Image(),
+      home: GridView5(),
     );
   }
 }
