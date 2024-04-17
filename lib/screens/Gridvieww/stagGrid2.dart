@@ -14,14 +14,25 @@ class OilProduct extends StatelessWidget {
         children: [
           StaggeredGridTile.count(
               crossAxisCellCount: 2,
-              mainAxisCellCount: 4,
+              mainAxisCellCount: 3,
               child: ProductTile(
                 color: Colors.grey,
                 image: "assets/images/pineapple.png",
                 title: "PineApple",
                 desc: "PineApple is a super tasty fruit",
                 price: 120,
-                click: () {  },
+                click: () {},
+              )),
+          StaggeredGridTile.count(
+              crossAxisCellCount: 3,
+              mainAxisCellCount: 3,
+              child: ProductTile(
+                color: Colors.grey,
+                image: "assets/images/salad.png",
+                title: "Salad",
+                desc: "Salad is a super healthy food",
+                price: 120,
+                click: () {},
               ))
         ],
       )),

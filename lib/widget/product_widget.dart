@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfeb/utils/textThemes.dart';
 
@@ -19,24 +20,32 @@ class ProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Image.asset(image!),
-          Text(title!, style: MyTextThemes.textHeading,),
-          Text(desc!, style: MyTextThemes.bodyTextStyle,),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text('\$${price!}', style: TextStyle(fontSize: 20),),
-              CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: IconButton( onPressed: click,
-                      icon: Icon(Icons.favorite_border)))
-            ],
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Card(
+        elevation: 8,
+        shadowColor: Colors.lightBlue,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(child: Image.asset(image!)),
+            Text(title!, style: MyTextThemes.textHeading,),
+            Text(desc!, style: MyTextThemes.bodyTextStyle,),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('\$${price!}', style: TextStyle(fontSize: 20),),
+                  CircleAvatar(
+                      backgroundColor: Colors.black,
+                      child: IconButton( onPressed: click,
+                          icon: Icon(Icons.favorite_border)))
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
