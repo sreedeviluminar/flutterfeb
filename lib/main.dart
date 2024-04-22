@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/bottomsheet.dart';
+import 'package:flutterfeb/screens/drawerr.dart';
 import 'package:flutterfeb/screens/tabEx.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoeHome.dart';
 
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ShoeHome(),
+      home: BottomSheett(),
     );
   }
 }
