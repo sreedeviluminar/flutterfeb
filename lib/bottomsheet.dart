@@ -24,14 +24,14 @@ class BottomSheett extends StatelessWidget {
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ListTile(
+              const ListTile(
                 leading: FaIcon(
                   FontAwesomeIcons.whatsapp,
                   color: Colors.teal,
                 ),
                 title: Text('WhatsApp'),
               ),
-              ListTile(
+              const ListTile(
                 leading: FaIcon(
                   FontAwesomeIcons.facebook,
                   color: Colors.blueAccent,
@@ -43,7 +43,7 @@ class BottomSheett extends StatelessWidget {
                   FontAwesomeIcons.twitter,
                   color: Colors.blue[200],
                 ),
-                title: Text('Twitter'),
+                title: const Text('Twitter'),
               ),
             ],
           );

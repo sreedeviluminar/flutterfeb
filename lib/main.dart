@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfeb/bottomsheet.dart';
-import 'package:flutterfeb/screens/drawerr.dart';
-import 'package:flutterfeb/screens/tabEx.dart';
+import 'package:flutterfeb/screens/ListViewww/home1.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoeHome.dart';
+import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoedetails.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomSheett(),
+      home: ShoeHome(),
+      ///define all the pages in the app with your own names
+      routes: {
+        'shoeDetails': (context) => ShoeDetails(),
+        'homepage'   : (context) => HomePage1()
+      },
     );
   }
 }
