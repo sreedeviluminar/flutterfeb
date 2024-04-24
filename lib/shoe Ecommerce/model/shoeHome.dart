@@ -3,6 +3,7 @@ class Shoe {
   String? name;
   String? image;
   String? description;
+
   Shoe({this.id, this.name, this.image, this.description});
 }
 
