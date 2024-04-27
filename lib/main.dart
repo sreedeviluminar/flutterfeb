@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/animationss/animation%20in%20navigation/main_animation.dart';
 import 'package:flutterfeb/animationss/animation.dart';
 import 'package:flutterfeb/animationss/heroAnimationn.dart';
 import 'package:flutterfeb/screens/ListViewww/home1.dart';
+import 'package:flutterfeb/screens/alertdialog.dart';
+import 'package:flutterfeb/screens/webvieww.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoeHome.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoedetails.dart';
 
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: HeroMain(),
+        home: WebViewEx(),
       ///define all the pages in the app with your own names
       routes: {
         'shoeDetails': (context) => ShoeDetails(),
