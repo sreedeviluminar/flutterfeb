@@ -8,7 +8,6 @@ class WebViewEx extends StatefulWidget {
 
 class _WebViewExState extends State<WebViewEx> {
   late WebViewController controller;
-
   @override
   void initState() {
     controller = WebViewController()
@@ -20,7 +19,8 @@ class _WebViewExState extends State<WebViewEx> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("WebView"),backgroundColor: Colors.green,),
+      appBar: AppBar(title: Text("WebView"),
+        backgroundColor: Colors.purple,),
       body: WebViewWidget(
         controller: controller,
       ),
