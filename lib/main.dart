@@ -4,6 +4,8 @@ import 'package:flutterfeb/animationss/animation.dart';
 import 'package:flutterfeb/animationss/heroAnimationn.dart';
 import 'package:flutterfeb/screens/ListViewww/home1.dart';
 import 'package:flutterfeb/screens/alertdialog.dart';
+import 'package:flutterfeb/screens/miniquizzApp/mainQuizz.dart';
+import 'package:flutterfeb/screens/pageviwbuilderr.dart';
 import 'package:flutterfeb/screens/webvieww.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoeHome.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoedetails.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: WebViewEx(),
+        home: QuizMain(),
       ///define all the pages in the app with your own names
       routes: {
         'shoeDetails': (context) => ShoeDetails(),
