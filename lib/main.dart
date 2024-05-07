@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfeb/screens/ListViewww/home1.dart';
+import 'package:flutterfeb/screens/my%20map.dart';
 import 'package:flutterfeb/screens/responsiveness/layout_builderr.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoedetails.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: MyAPP(),
+        home: MapScreen(),
       ///define all the pages in the app with your own names
       routes: {
         'shoeDetails': (context) => ShoeDetails(),
