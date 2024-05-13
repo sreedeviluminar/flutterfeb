@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/database/local%20storage/sqflite_crud/task%20manager/views/taskSplash.dart';
 import 'package:flutterfeb/screens/ListViewww/home1.dart';
 import 'package:flutterfeb/screens/my%20map.dart';
 import 'package:flutterfeb/screens/responsiveness/layout_builderr.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: LoginShared(),
+        home: TaskSplash(),
       ///define all the pages in the app with your own names
       routes: {
         'shoeDetails': (context) => ShoeDetails(),
