@@ -92,8 +92,7 @@ class _TaskHomeState extends State<TaskHome> {
                                         },
                                         icon: const Icon(Icons.edit)),
                                     IconButton(
-                                        onPressed: () {
-                                        },
+                                        onPressed: () {},
                                         icon: const Icon(Icons.delete))
                                   ],
                                 )
