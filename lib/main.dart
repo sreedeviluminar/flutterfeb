@@ -4,10 +4,13 @@ import 'package:flutterfeb/screens/ListViewww/home1.dart';
 import 'package:flutterfeb/screens/my%20map.dart';
 import 'package:flutterfeb/screens/responsiveness/layout_builderr.dart';
 import 'package:flutterfeb/shoe%20Ecommerce/screens/views/shoedetails.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'database/local storage/simple_hive_Ex/hive_crud.dart';
 
-import 'database/local storage/using shared preference/view/login.dart';
-
-void main() {
+void main() async{
+  await Hive.initFlutter();
+  await Hive.openBox('contactBook');
   runApp(MyApp());
 }
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: TaskSplash(),
+        home: ContactHive(),
       ///define all the pages in the app with your own names
       routes: {
         'shoeDetails': (context) => ShoeDetails(),

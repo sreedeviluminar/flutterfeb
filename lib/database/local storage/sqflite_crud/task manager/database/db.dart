@@ -29,4 +29,16 @@ class SQLHelper {
     return db.query("MyNotes",orderBy: 'id');
   }
 
+  //update the values from a single id
+  static Future<int> update(int id, String utitle, String ucontent) async {
+    final db = await SQLHelper.openOrCreateDb();
+    final udata = {'title': utitle, 'content': ucontent};
+    final uid = db.update('MyNotes', udata, where: 'id = ?', whereArgs: [id]);
+    return uid;
+  }
+
+  static Future<void> deleteNote(int id) async{
+    final db = await SQLHelper.openOrCreateDb();
+    db.delete('MyNotes',where: 'id = ?', whereArgs: [id]);
+  }
 }

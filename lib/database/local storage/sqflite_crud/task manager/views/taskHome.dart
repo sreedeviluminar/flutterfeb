@@ -92,7 +92,9 @@ class _TaskHomeState extends State<TaskHome> {
                                         },
                                         icon: const Icon(Icons.edit)),
                                     IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          deleteNote(task['id']);
+                                        },
                                         icon: const Icon(Icons.delete))
                                   ],
                                 )
@@ -110,9 +112,8 @@ class _TaskHomeState extends State<TaskHome> {
 
   showSheet(int? id, BuildContext context) {
     if (id != null) {
-      final existingTask =
-          taskFromDb.firstWhere((element) => element['id'] == id);
-      titleController.text = existingTask['title'];
+      final existingTask = taskFromDb.firstWhere((element) => element['id'] == id);
+      titleController.text   = existingTask['title'];
       contentController.text = existingTask['content'];
     }
 
@@ -151,12 +152,20 @@ class _TaskHomeState extends State<TaskHome> {
                     color: MyColors.basicColor,
                     shape: const StadiumBorder(),
                     onPressed: () {
-                      createNote(context);
+                      if(id == null) {
+                        createNote(context);
+                      }
+                      if(id != null){
+                        updateNote(id,titleController.text,
+                            contentController.text);
+                      }
                       titleController.clear();
                       contentController.clear();
                       Navigator.pop(context);
                     },
-                    child: Text(id == null ? "Create Note" : "Update Note"))
+                    child: Text(id == null 
+                        ? "Create Note" 
+                        : "Update Note"))
               ],
             ),
           );
@@ -174,4 +183,17 @@ class _TaskHomeState extends State<TaskHome> {
       showErrorSnackBar(context);
     }
   }
+
+  Future<void> updateNote(int id,
+      String utitle, String ucontent) async{
+    await SQLHelper.update(id,utitle,ucontent);
+    readTask();
+  }
+
+  Future<void> deleteNote(int id) async{
+    await SQLHelper.deleteNote(id);
+    readTask();
+  }
+
+  
 }
