@@ -53,13 +53,30 @@ class _ContactHiveState extends State<ContactHive> {
                       style: MyTextThemes.bodyTextStyle,
                     ),
                     subtitle: Text(contact['number']),
-                  ),
-                );
+                        trailing: Wrap(
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  showContactBox(contact['key']);
+                                },
+                                icon: const Icon(Icons.edit)),
+                            IconButton(
+                                onPressed: () {
+                                  deleteContact(contact['key']);
+                                },
+                                icon: const Icon(Icons.delete)),
+                          ],
+                        )),
+                  );
               }));
   }
-
-  void showContactBox(int? key) {
-    // similar to id in sqflite
+  void showContactBox(int? key) {// similar to id in sqflite
+    if (key != null) {
+      final savedContact =
+          contacts.firstWhere((element) => element['key'] == key);
+      nameController.text = savedContact['name'];
+      phoneController.text = savedContact['number'];
+    }
     showDialog(
         context: context,
         builder: (context) {
@@ -93,6 +110,12 @@ class _ContactHiveState extends State<ContactHive> {
                   String number = phoneController.text;
                   if (key == null) {
                     createContact({'contactName': name, 'phoneNumber': number});
+                  }
+                  if (key != null) {
+                    updateContact(key, {
+                      'contactName': nameController.text,
+                      'phoneNumber': phoneController.text
+                    });
                   }
                   nameController.clear();
                   phoneController.clear();
@@ -130,5 +153,15 @@ class _ContactHiveState extends State<ContactHive> {
     setState(() {
       contacts = contact_from_hive.reversed.toList();
     });
+  }
+
+  void updateContact(int key, Map<String, String> updatedContact) {
+    box.put(key,updatedContact);
+    refresh_or_read_contact();
+  }
+
+  void deleteContact(int key) {
+    box.delete(key);
+    refresh_or_read_contact();
   }
 }
