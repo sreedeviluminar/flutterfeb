@@ -134,7 +134,7 @@ class _ContactHiveState extends State<ContactHive> {
         });
   }
 
-  void createContact(Map<String, String> contact) {
+  void createContact(Map<String, dynamic> contact) {
     box.add(contact);
     refresh_or_read_contact(); // update list after adding a new contact
   }
@@ -155,7 +155,7 @@ class _ContactHiveState extends State<ContactHive> {
     });
   }
 
-  void updateContact(int key, Map<String, String> updatedContact) {
+  void updateContact(int key, Map<String, dynamic> updatedContact) {
     box.put(key,updatedContact);
     refresh_or_read_contact();
   }
