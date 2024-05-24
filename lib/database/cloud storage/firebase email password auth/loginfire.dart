@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterfeb/database/cloud%20storage/firebase%20email%20password%20auth/regfire.dart';
 import 'package:get/get.dart';
 
+import 'db/firebaseFunctions.dart';
+import 'homeFire.dart';
+
 class LoginFire extends StatelessWidget {
   final emailController = TextEditingController();
   final passController = TextEditingController();
@@ -44,7 +47,7 @@ class LoginFire extends StatelessWidget {
                 onPressed: () {
                   Get.to(RegFire());
                 },
-                child: Text("Not A User?? Register Here!!"))
+                child: const Text("Not A User?? Register Here!!"))
           ],
         ),
       ),

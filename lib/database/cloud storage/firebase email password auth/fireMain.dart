@@ -1,6 +1,9 @@
 import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterfeb/database/cloud%20storage/firebase%20email%20password%20auth/homeFire.dart';
 import 'package:flutterfeb/database/cloud%20storage/firebase%20email%20password%20auth/loginfire.dart';
 import 'package:get/get.dart';
 
@@ -28,8 +31,13 @@ class MyAppFire extends StatelessWidget {
 class FireSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     Timer(const Duration(seconds: 2), () {
-      Get.off(LoginFire());
+      if (user == null) {
+        Get.off(LoginFire());
+      } else {
+        Get.off(HomeFire());
+      }
     });
     return const Scaffold(
       body: Center(

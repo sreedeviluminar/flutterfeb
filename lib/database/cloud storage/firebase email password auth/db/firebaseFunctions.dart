@@ -28,4 +28,8 @@ class FirebaseFunctions {
       print(e);
     }
   }
+
+  Future<void> logoutUser() async{
+    await FirebaseAuth.instance.signOut();
+  }
 }
