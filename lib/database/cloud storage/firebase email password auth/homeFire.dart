@@ -13,13 +13,13 @@ class HomeFire extends StatelessWidget {
               //await FirebaseAuth.instance.signOut();
               logoutUser();
             },
-            child: Text("LogOut")),
+            child: const Text("LogOut")),
       ),
     );
   }
 
   void logoutUser() {
-    FirebaseFunctions().logoutUser().then((value) =>
-        Get.offAll(LoginFire()));
+    FirebaseFunctions().logoutUser().
+    then((value) => Get.off(LoginFire()));
   }
 }

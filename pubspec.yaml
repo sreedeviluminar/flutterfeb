@@ -54,6 +54,13 @@ dependencies:
   firebase_core: ^2.31.1
   firebase_auth: ^4.19.6
 
+  #api integration using http
+  http: ^1.2.1
+  cached_network_image: ^3.3.1
+  #get:
+
+
+
 
 
 
